@@ -45,8 +45,9 @@ resource "aws_network_interface" "network" {
 }
 
 resource "aws_instance" "vm" {
-  ami           = data.aws_ami.ubuntu.id # us-west-2
-  instance_type = var.instance_type
+  ami                         = data.aws_ami.ubuntu.id # us-west-2
+  instance_type               = var.instance_type
+  associate_public_ip_address = false
   instance_market_options {
     market_type = "spot"
     spot_options {
@@ -80,7 +81,7 @@ resource "tls_private_key" "rsa" {
 
 resource "local_file" "tf_key" {
   content  = tls_private_key.rsa.private_key_pem
-  filename = "${var.file_name}"
+  filename = var.file_name
 }
 
 resource "local_file" "tf_key_pem" {

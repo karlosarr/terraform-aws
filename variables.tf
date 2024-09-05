@@ -2,29 +2,29 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 variable "aws_region" {}
 variable "vpc_cidr_block" {
-  type    = string
+  type        = string
   description = ""
-  default = "10.0.0.0/16"
+  default     = "10.0.0.0/16"
 }
 variable "subnet_cidr_block" {
   type        = string
   description = ""
-  default = "10.0.0.0/24"
+  default     = "10.0.0.0/24"
 }
 variable "instance_type" {
   type        = string
   description = ""
-  default = "t3.micro"
+  default     = "t3.micro"
 }
 variable "environment" {
   type        = string
   description = ""
-  default = "dev"
+  default     = "dev"
 }
 variable "private_ips" {
   type        = list(string)
   description = ""
-  default = ["10.0.0.1"]
+  default     = ["10.0.0.1"]
 }
 #------------------
 #Key Pair Variables
