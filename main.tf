@@ -23,4 +23,5 @@ module "s3" {
   s3_bucket_name = var.s3_bucket_name
   s3_versioning  = var.s3_versioning
   force_destroy  = var.force_destroy
+  environment    = var.environment
 }

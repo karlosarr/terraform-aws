@@ -12,3 +12,8 @@ variable "force_destroy" {
   description = "Force destroy the bucket"
   type = bool
 }
+variable "environment" {
+  type        = string
+  description = ""
+  default     = "dev"
+}

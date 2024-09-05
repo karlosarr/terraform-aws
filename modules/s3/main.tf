@@ -4,6 +4,8 @@ resource "aws_s3_bucket" "state" {
   force_destroy = var.force_destroy
   tags = {
     Name = "state_bucket"
+    Terraform   = "true"
+    Environment = var.environment
   }
 }
 
