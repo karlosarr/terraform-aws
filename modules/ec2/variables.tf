@@ -1,13 +1,3 @@
-variable "vpc_cidr_block" {
-  type        = string
-  description = ""
-  default     = "10.0.0.0/16"
-}
-variable "subnet_cidr_block" {
-  type        = string
-  description = ""
-  default     = "10.0.0.0/24"
-}
 variable "instance_type" {
   type        = string
   description = ""
@@ -23,6 +13,7 @@ variable "private_ips" {
   description = ""
   default     = ["10.0.0.1"]
 }
+variable "private_subnets" {}
 #------------------
 #Key Pair Variables
 #------------------

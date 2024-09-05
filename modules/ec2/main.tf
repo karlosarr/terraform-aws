@@ -14,27 +14,8 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_vpc" "vpc" {
-  cidr_block = var.vpc_cidr_block
-
-  tags = {
-    Terraform   = "true"
-    Environment = var.environment
-  }
-}
-
-resource "aws_subnet" "subnet" {
-  vpc_id     = aws_vpc.vpc.id
-  cidr_block = var.subnet_cidr_block
-
-  tags = {
-    Terraform   = "true"
-    Environment = var.environment
-  }
-}
-
 resource "aws_network_interface" "network" {
-  subnet_id   = aws_subnet.subnet.id
+  subnet_id   = var.private_subnets.id  #aws_subnet.subnet.id
   private_ips = var.private_ips
 
   tags = {
@@ -47,12 +28,8 @@ resource "aws_network_interface" "network" {
 resource "aws_instance" "vm" {
   ami                         = data.aws_ami.ubuntu.id # us-west-2
   instance_type               = var.instance_type
-  associate_public_ip_address = false
   instance_market_options {
     market_type = "spot"
-    spot_options {
-      max_price = 0.0035
-    }
   }
   network_interface {
     network_interface_id = aws_network_interface.network.id

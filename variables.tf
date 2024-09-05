@@ -1,6 +1,9 @@
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
 variable "aws_region" {}
+#------------------
+#VPC Variables
+#------------------
 variable "vpc_cidr_block" {
   type        = string
   description = ""
@@ -11,6 +14,9 @@ variable "subnet_cidr_block" {
   description = ""
   default     = "10.0.0.0/24"
 }
+#------------------
+#EC2 Variables
+#------------------
 variable "instance_type" {
   type        = string
   description = ""
@@ -37,4 +43,21 @@ variable "key_pair_name" {
 variable "file_name" {
   description = "Name of the key pair file"
   type        = string
+}
+#--------------
+# s3 Variables
+#--------------
+variable "s3_bucket_name" {
+  description = "Name of bucket that holds the state file"
+  type        = string
+}
+
+variable "s3_versioning" {
+  description = "Versioning for bucket"
+  type        = string
+}
+
+variable "force_destroy" {
+  description = "Force destroy the bucket"
+  type        = bool
 }
