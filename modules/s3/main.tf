@@ -38,7 +38,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "state" {
     }
   }
 }
-
+#State encryption key S3
 resource "aws_kms_key" "state" {
   description             = "s3 bucket encryption key"
   deletion_window_in_days = 10

@@ -26,3 +26,8 @@ variable "file_name" {
   description = "Name of the key pair file"
   type        = string
 }
+
+variable "availability_zone" {
+  description = "Availability Zone"
+  type        = string
+}

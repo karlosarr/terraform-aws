@@ -19,17 +19,17 @@ variable "subnet_cidr_block" {
 #------------------
 variable "instance_type" {
   type        = string
-  description = ""
+  description = "Instance Type for EC2"
   default     = "t3.micro"
 }
 variable "environment" {
   type        = string
-  description = ""
+  description = "Environment"
   default     = "dev"
 }
 variable "private_ips" {
   type        = list(string)
-  description = ""
+  description = "Private IP for EC2"
   default     = ["10.0.0.1"]
 }
 #------------------
@@ -60,4 +60,9 @@ variable "s3_versioning" {
 variable "force_destroy" {
   description = "Force destroy the bucket"
   type        = bool
+}
+
+variable "availability_zone" {
+  description = "Availability Zone"
+  type        = string
 }
