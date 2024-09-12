@@ -78,7 +78,7 @@ jobs:
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
-      run: terraform -chdir=environments/dev fmt -check
+      run: terraform -chdir=environments/dev fmt -check && terraform -chdir=environments/qa fmt -check && terraform -chdir=environments/production fmt -check
 
     # Generates an execution plan for Terraform
     #- name: Terraform Plan
