@@ -7,13 +7,13 @@ module "vpc" {
 }
 #EC2 module
 module "ec2" {
-  source          = "../../modules/ec2"
-  instance_type   = var.instance_type
-  environment     = var.environment
-  private_ips     = var.private_ips
-  file_name       = var.file_name
-  key_pair_name   = var.key_pair_name
-  private_subnets = module.vpc.private_subnets
+  source            = "../../modules/ec2"
+  instance_type     = var.instance_type
+  environment       = var.environment
+  private_ips       = var.private_ips
+  file_name         = var.file_name
+  key_pair_name     = var.key_pair_name
+  private_subnets   = module.vpc.private_subnets
   availability_zone = var.availability_zone
   depends_on = [
     module.vpc

@@ -7,11 +7,7 @@ terraform {
   }
 }
 provider "aws" {
-  region  = (var.aws_region)
-  profile = "terraform"
-}
-
-variable "availability_zone" {
-  description = "Availability Zone"
-  type        = bool
+  region     = (var.aws_region)
+  access_key = (var.aws_access_key)
+  secret_key = (var.aws_secret_key)
 }

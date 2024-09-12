@@ -1,11 +1,11 @@
 aws_access_key    = "xxxxxxx"
 aws_secret_key    = "xxxxxxx"
 aws_region        = "us-east-1"
-vpc_cidr_block    = "10.0.0.0/16"
-subnet_cidr_block = "10.0.0.0/24"
+vpc_cidr_block    = "10.2.0.0/16"
+subnet_cidr_block = "10.2.0.0/24"
 instance_type     = "t3.micro"
 environment       = "qa"
-private_ips       = ["10.0.0.100"]
+private_ips       = ["10.2.0.100"]
 file_name         = "tf_key"
 key_pair_name     = "tfkey"
 s3_bucket_name    = "bucket-demo-qa-345634565"
